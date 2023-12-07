@@ -8,3 +8,9 @@
     src: url('/src/fonts/Geist.woff2') format('woff2');
   }
 }
+
+@layer utilities {
+  .clip-movie-image {
+    clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
+  }
+}
