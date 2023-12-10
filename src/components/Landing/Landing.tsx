@@ -1,39 +1,13 @@
 import React from 'react';
 
-const API_ENDPOINT = import.meta.env.VAULT_API_ENDPOINT;
-const access_token = import.meta.env.VAULT_ACCESS_TOKEN;
+interface LandingProps {
+  search: string;
+  setSearch: (str: string) => void;
+  handler: (e: React.FormEvent) => void;
+}
 
-function Landing() {
-  const [search, setSearch] = React.useState('');
-
-  async function getResults() {
-    const headers = {
-      accept: 'application/json',
-      Authorization: `Bearer ${access_token}`,
-    };
-    const myHeaders = new Headers(headers);
-
-    const options = {
-      method: 'GET',
-      headers: myHeaders,
-    };
-
-    const res = await fetch(
-      `${API_ENDPOINT}?query=${search}&include_adult=false`,
-      options
-    );
-    if (!res.ok) throw new Error('An error occurred accessing the API');
-    const data = await res.json();
-    return data;
-  }
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    const data = await getResults();
-    console.log(data);
-    setSearch('');
-  }
-
+function Landing({ search, setSearch, handler }: LandingProps) {
+  const inputId = React.useId();
   return (
     <div className="grid gap-24 place-content-center">
       <main>
@@ -41,12 +15,13 @@ function Landing() {
       </main>
       <form
         onSubmit={(e) => {
-          handleSubmit(e);
+          handler(e);
         }}
         className="grid gap-9"
       >
         <input
           className="p-4 rounded-lg bg-indigo-1 placeholder-slate-11 border border-indigo-8 text-xl outline-none focus-within:border-2"
+          id={inputId}
           type="text"
           value={search}
           onChange={(e) => {

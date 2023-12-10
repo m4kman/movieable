@@ -33,7 +33,7 @@ export default {
 			},
 		},
 		fontFamily: {
-			geist: "geist, sans-serif",
+			geist: "Geist, sans-serif",
 		},
 		extend: {},
 	},
