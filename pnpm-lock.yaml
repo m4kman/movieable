@@ -52,12 +52,6 @@ devDependencies:
   '@storybook/test':
     specifier: 7.6.4
     version: 7.6.4
-<<<<<<< HEAD
-=======
-  '@types/prop-types':
-    specifier: ^15.7.11
-    version: 15.7.11
->>>>>>> main
   '@types/react':
     specifier: ^18.2.39
     version: 18.2.39
@@ -8152,13 +8146,8 @@ packages:
     resolution: {integrity: sha512-AsS729u2RHUfEra9xJrE39peJcc2stq2+poBXX8bcM08Y6g9j/i/PUzwNQqkaJde7Ntg1TO7bSREbR5sdosQ+g==}
     dev: true
 
-<<<<<<< HEAD
   /tailwindcss@3.4.0:
     resolution: {integrity: sha512-VigzymniH77knD1dryXbyxR+ePHihHociZbXnLZHUyzf2MMs2ZVqlUrZ3FvpXP8pno9JzmILt1sZPD19M3IxtA==}
-=======
-  /tailwindcss@3.3.5:
-    resolution: {integrity: sha512-5SEZU4J7pxZgSkv7FP1zY8i2TIAOooNZ1e/OGtxIEv6GltpoiXUqWvLy89+a10qYTB1N5Ifkuw9lqQkN9sscvA==}
->>>>>>> main
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:

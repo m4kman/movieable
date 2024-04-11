@@ -13,18 +13,9 @@
   .clip-movie-image {
     clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
   }
-<<<<<<< HEAD
 }
 
 .zoom-background [data-rmiz-modal-overlay="visible"] {
-=======
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-.zoom-background [data-rmiz-modal-overlay='visible'] {
->>>>>>> main
   background-color: transparent;
   backdrop-filter: blur(10px);
 }
