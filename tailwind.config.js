@@ -3,6 +3,9 @@ export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		colors: {
+      bluegray: {
+        1: "hsl(0, 0%, 13%)",
+      },
 			indigo: {
 				1: "#11131f",
 				2: "#141726",
@@ -31,9 +34,23 @@ export default {
 				11: "#b0b4ba",
 				12: "#edeef0",
 			},
+       slateDarkA: {
+        slateA1: '#00000000',
+        slateA2: '#d8f4f609',
+        slateA3: '#ddeaf814',
+        slateA4: '#d3edf81d',
+        slateA5: '#d9edfe25',
+        slateA6: '#d6ebfd30',
+        slateA7: '#d9edff40',
+        slateA8: '#d9edff5d',
+        slateA9: '#dfebfd6d',
+        slateA10: '#e5edfd7b',
+        slateA11: '#f1f7feb5',
+        slateA12: '#fcfdffef',
+      }
 		},
 		fontFamily: {
-			geist: "geist, sans-serif",
+			geist: "Geist, sans-serif",
 		},
 		extend: {},
 	},

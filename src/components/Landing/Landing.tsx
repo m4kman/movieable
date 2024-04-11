@@ -1,26 +1,47 @@
-import * as React from 'react';
+import React from 'react';
 
-function Landing() {
+import Navbar from '../Navbar';
+
+interface LandingProps {
+  search: string;
+  setSearch: (str: string) => void;
+  handler: (e: React.FormEvent) => void;
+}
+
+function Landing({ search, setSearch, handler }: LandingProps) {
+  const inputId = React.useId();
   return (
-    <div className="grid gap-24  place-content-center">
-      <main>
-        <h1 className="text-6xl">Your one-stop-search for movies</h1>
-      </main>
-      <form className="grid gap-9">
-        <input
-          className="p-4 rounded-lg bg-indigo-3 placeholder-slate-11 border border-indigo-8 text-xl"
-          type="text"
-          placeholder="Search for a movie"
-        />
-        <button
-          className="rounded-lg bg-indigo-3 mx-auto p-5 text-xl border border-indigo-8"
-          type="submit"
-          onClick={(e) => e.preventDefault()}
+    <>
+      <Navbar />
+      <div className="grid gap-24 place-content-center">
+        <main>
+          <h1 className="text-6xl">Your one-stop-search for movies</h1>
+        </main>
+        <form
+          onSubmit={(e) => {
+            handler(e);
+          }}
+          className="grid gap-9"
         >
-          Search Away
-        </button>
-      </form>
-    </div>
+          <input
+            className="p-4 rounded-lg bg-indigo-3 placeholder-indigo-12 border border-indigo-8 text-xl outline-none focus-within:border-2"
+            id={inputId}
+            type="text"
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
+            placeholder="Search for a movie"
+          />
+          <button
+            className="rounded-lg mx-auto px-5 py-4 text-xl border bg-indigo-6 border-none text-slate-12"
+            type="submit"
+          >
+            Search Away
+          </button>
+        </form>
+      </div>
+    </>
   );
 }
 

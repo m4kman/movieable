@@ -4,7 +4,22 @@
 
 @layer base {
   @font-face {
-    font-family: 'Geist';
-    src: url('/src/fonts/Geist.woff2') format('woff2');
+    font-family: "Geist";
+    src: url("/src/fonts/Geist.woff2") format("woff2");
   }
+}
+
+@layer utilities {
+  .clip-movie-image {
+    clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
+  }
+}
+
+.zoom-background [data-rmiz-modal-overlay="visible"] {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+div [data-rmiz-modal-content] > img {
+  border-radius: 12px;
 }
