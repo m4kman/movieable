@@ -24,6 +24,10 @@ function Home() {
 
   return (
     <>
+<<<<<<< HEAD
+=======
+      <Navbar />
+>>>>>>> main
       {!isShowingCards ? (
         <Landing search={search} setSearch={setSearch} handler={handleSubmit} />
       ) : (

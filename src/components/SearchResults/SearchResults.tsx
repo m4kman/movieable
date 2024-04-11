@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 import React from "react";
 
 import MovieCard from "../MovieCard";
 import MovieDetails from "../MovieDetails";
 import { DetailsType } from "../../types/types";
 import GoBack from "../GoBack";
+=======
+import React from 'react';
+
+import MovieCard from '../MovieCard';
+import MovieDetails from '../MovieDetails';
+import { DetailsType } from '../../types/types';
+>>>>>>> main
 
 interface PropTypes {
   movieData: MovieData[];
@@ -31,11 +39,16 @@ function SearchResults({
     (movie) => movie.backdrop_path !== null
   );
 
+<<<<<<< HEAD
   function goToHome() {
+=======
+  function handleClick() {
+>>>>>>> main
     setIsShowingCards(false);
     setSearchResults([]);
   }
 
+<<<<<<< HEAD
   function goToCards() {
     setIsShowingDetails(false);
   }
@@ -50,6 +63,35 @@ function SearchResults({
       ) : (
         <>
           <GoBack handler={goToHome} />
+=======
+  return (
+    <>
+      {isShowingDetails ? (
+        <MovieDetails details={movieDetails} />
+      ) : (
+        <>
+          <button
+            className="flex gap-2 px-8 mb-10 cursor-pointer"
+            onClick={handleClick}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+              />
+            </svg>
+            <span>Go Back</span>
+          </button>
+
+>>>>>>> main
           <div className="flex gap-5 flex-wrap px-8 pb-12">
             {filteredMovieData.map(
               (movie: MovieData): JSX.Element => (

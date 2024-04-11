@@ -27,7 +27,11 @@ function MovieCard({
   async function handleClick(movieID: number) {
     const movieDetails = await getAPIData(
       DETAILS_ENDPOINT,
+<<<<<<< HEAD
       `/${movieID}?append_to_response=images,videos`
+=======
+      `/${movieID}?append_to_response=images`
+>>>>>>> main
     );
     setMovieDetails(movieDetails);
     setIsShowingDetails(true);
