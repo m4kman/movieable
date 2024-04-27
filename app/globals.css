@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 241 44% 99%;
+    --foreground: 241 73% 1%;
+    --muted: 211 15% 86%;
+    --muted-foreground: 211 1% 31%;
+    --popover: 241 44% 99%;
+    --popover-foreground: 241 73% 1%;
+    --card: 241 44% 98%;
+    --card-foreground: 0 0% 0%;
+    --border: 241 13% 94%;
+    --input: 241 13% 94%;
+    --primary: 241 94% 66%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 211 94% 66%;
+    --secondary-foreground: 211 94% 6%;
+    --accent: 271 94% 66%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 16 96% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 241 94% 66%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 241 40% 4%;
+    --foreground: 241 10% 99%;
+    --muted: 211 15% 14%;
+    --muted-foreground: 211 1% 69%;
+    --popover: 241 40% 4%;
+    --popover-foreground: 241 10% 99%;
+    --card: 241 40% 5%;
+    --card-foreground: 0 0% 100%;
+    --border: 241 13% 15%;
+    --input: 241 13% 15%;
+    --primary: 241 94% 66%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 211 94% 66%;
+    --secondary-foreground: 211 94% 6%;
+    --accent: 271 94% 66%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 16 96% 54%;
+    --destructive-foreground: 0 0% 0%;
+    --ring: 241 94% 66%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .clip-movie-image {
+    clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
+  }
+
+  .zoom-background [data-rmiz-modal-overlay="visible"] {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+  }
+
+  .zoom-background [data-rmiz-btn-unzoom] {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+}
