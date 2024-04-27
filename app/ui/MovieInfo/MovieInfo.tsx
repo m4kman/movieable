@@ -25,19 +25,19 @@ function MovieInfo({
   const allGenres = genres.map((genre) => ` ${genre.name}`).toString();
   return (
     <>
-      <div className="mb-2 grid grid-cols-[1fr_2fr]">
+      <div className="mb-2 grid grid-cols-[1fr_2fr] gap-2">
         <span>Genre</span>
         <span className="text-slate-12">{allGenres}</span>
       </div>
-      <div className="mb-2 grid grid-cols-[1fr_2fr]">
+      <div className="mb-2 grid grid-cols-[1fr_2fr] gap-2">
         <span>Language</span>
         <span className="text-slate-12">{languages}</span>
       </div>
-      <div className="mb-2 grid grid-cols-[1fr_2fr]">
-        <span>Released</span>
+      <div className="mb-2 grid grid-cols-[1fr_2fr] gap-2">
+        <span>Release Date</span>
         <span className="text-slate-12">{date}</span>
       </div>
-      <div className="mb-2 grid grid-cols-[1fr_2fr]">
+      <div className="mb-2 grid grid-cols-[1fr_2fr] gap-2">
         <span>Duration</span>
         <span className="text-slate-12">{duration}</span>
       </div>

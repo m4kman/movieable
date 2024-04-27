@@ -40,8 +40,9 @@ export default async function Home({
         }) => (
           <Link
             href={`/movie/${movieData.id}?type=${movieData.media_type ? movieData.media_type : "movie"}`}
+            key={movieData.id}
           >
-            <MovieCard key={movieData.id} movieData={movieData} />
+            <MovieCard movieData={movieData} />
           </Link>
         ),
       )}

@@ -5,14 +5,25 @@ import { motion } from "framer-motion";
 
 const navItems = [
   {
-    name: "Popular",
-    link: "/",
+    name: "Action",
+    link: "/tag/28",
   },
   {
-    name: "Action",
-    link: "/",
+    name: "Crime",
+    link: "/tag/80",
   },
-  { name: "Sci-Fi", link: "/" },
+  {
+    name: "Drama",
+    link: "/tag/18",
+  },
+  {
+    name: "Mystery",
+    link: "/tag/9648",
+  },
+  {
+    name: "Sci-Fi",
+    link: "/tag/878",
+  },
 ];
 
 function Navbar() {

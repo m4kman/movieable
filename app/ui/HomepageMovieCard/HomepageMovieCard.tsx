@@ -6,13 +6,13 @@ import Image from "next/image";
 function HomepageMovieCard({
   data,
 }: {
-  data: { poster: string; id: number; type: string };
+  data: { poster_path: string; id: number; type: string };
 }) {
   return (
     <Link href={`/movie/${data.id}?type=${data.type ? data.type : "movie"}`}>
       <Image
-        className="rounded-lg shadow-sm shadow-border"
-        src={`https://image.tmdb.org/t/p/w780${data.poster}`}
+        className="h-full rounded-lg shadow-sm shadow-border"
+        src={`https://image.tmdb.org/t/p/w780${data.poster_path}`}
         alt="Movie Poster"
         width={200}
         height={300}

@@ -4,7 +4,7 @@ import range from "@/app/lib/range";
 import HomepageMovieCard from "../HomepageMovieCard";
 
 interface HomepageMoviesProps {
-  data: { poster: string; id: number; type: string }[];
+  data: { poster_path: string; id: number; type: string }[];
 }
 
 function HomepageMovies({ data }: HomepageMoviesProps) {

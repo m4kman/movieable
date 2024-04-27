@@ -23,13 +23,21 @@ async function Homepage() {
     if (type === "popularity") {
       const sortedData = data.sort((a, b) => b.popularity - a.popularity);
       const filteredData = sortedData.slice(0, 5).map((item) => {
-        return { poster: item.poster_path, id: item.id, type: item.media_type };
+        return {
+          poster_path: item.poster_path,
+          id: item.id,
+          type: item.media_type,
+        };
       });
       return filteredData;
     }
     const sortedData = data.sort((a, b) => b.vote_average - a.vote_average);
     const filteredData = sortedData.slice(0, 5).map((item) => {
-      return { poster: item.poster_path, id: item.id, type: item.media_type };
+      return {
+        poster_path: item.poster_path,
+        id: item.id,
+        type: item.media_type,
+      };
     });
     return filteredData;
   }

@@ -18,7 +18,7 @@ function MovieDetails({ details }: PropTypes) {
   const allBackdrops = details.images.backdrops;
 
   const backdropsList = [];
-  for (let i = 5; i <= 10; i++) {
+  for (let i = 0; i < 6; i++) {
     backdropsList.push(allBackdrops[i]);
   }
 

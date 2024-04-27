@@ -16,7 +16,7 @@ interface MovieData {
 
 function MovieCard({ movieData }: MovieData) {
   return (
-    <div className="flex max-h-fit flex-col items-center rounded-lg bg-card shadow shadow-border">
+    <div className="flex h-full flex-col items-center rounded-lg bg-card shadow shadow-border">
       <div className="relative">
         <Image
           width={300}
@@ -33,8 +33,8 @@ function MovieCard({ movieData }: MovieData) {
         </p>
       </div>
       <div
-        className="mb-8 mt-8 flex h-full flex-col content-center justify-between gap-6
-          overflow-clip px-6 text-center"
+        className="mb-8 mt-8 flex h-full flex-col justify-between gap-6 overflow-clip px-6
+          text-center"
       >
         <h2
           className="my-auto line-clamp-2 scroll-m-20 text-balance text-2xl font-semibold
