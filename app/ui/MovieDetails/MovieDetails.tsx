@@ -18,13 +18,21 @@ function MovieDetails({ details }: PropTypes) {
   const allBackdrops = details.images.backdrops;
 
   const backdropsList = [];
-  for (let i = 0; i < 6; i++) {
-    backdropsList.push(allBackdrops[i]);
+  if (allBackdrops.length < 6) {
+    for (let i = 0; i < allBackdrops.length; i++) {
+      backdropsList.push(allBackdrops[i]);
+    }
+  } else {
+    for (let i = 0; i < 6; i++) {
+      backdropsList.push(allBackdrops[i]);
+    }
   }
 
   const trailer = details.videos.results.find(
     (video) => video.name === "Official Trailer",
   );
+
+  console.log(backdropsList);
 
   return (
     <div className="mt-6 tracking-wide text-foreground">
