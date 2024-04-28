@@ -1,6 +1,12 @@
 import React from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/app/ui/carousel";
 
-import range from "@/app/lib/range";
 import HomepageMovieCard from "../HomepageMovieCard";
 
 interface HomepageMoviesProps {
@@ -9,11 +15,17 @@ interface HomepageMoviesProps {
 
 function HomepageMovies({ data }: HomepageMoviesProps) {
   return (
-    <div className="grid grid-cols-5 gap-8">
-      {range(5).map((idx) => (
-        <HomepageMovieCard data={data[idx]} key={idx} />
-      ))}
-    </div>
+    <Carousel opts={{ align: "start" }} className="w-full">
+      <CarouselContent>
+        {data.map((movie, idx) => (
+          <CarouselItem className="basis-1/5" key={idx}>
+            <HomepageMovieCard data={movie} />
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
   );
 }
 
