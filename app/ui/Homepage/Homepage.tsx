@@ -14,21 +14,21 @@ async function Homepage() {
     <>
       <Hero />
       <div className="mt-14">
-        <h2 className="mb-4 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        <h2 className="mb-4 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight">
           Trending
         </h2>
         <HomepageMovies data={trendingMovies} />
       </div>
 
       <div className="mt-14">
-        <h2 className="mb-4 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        <h2 className="mb-4 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight">
           Top Rated
         </h2>
         <HomepageMovies data={topRatedMovies} />
       </div>
 
       <div className="mt-14">
-        <h2 className="mb-4 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        <h2 className="mb-4 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight">
           Popular
         </h2>
         <HomepageMovies data={popularMovies} />

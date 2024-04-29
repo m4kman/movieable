@@ -32,8 +32,6 @@ function MovieDetails({ details }: PropTypes) {
     (video) => video.name === "Official Trailer",
   );
 
-  console.log(backdropsList);
-
   return (
     <div className="mt-6 tracking-wide text-foreground">
       <h1 className="text-6xl font-semibold">
