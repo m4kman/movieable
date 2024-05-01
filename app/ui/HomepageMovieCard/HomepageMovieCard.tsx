@@ -52,7 +52,7 @@ function HomepageMovieCard({
         />
         <motion.div
           variants={variants}
-          className="absolute -bottom-0 flex w-full justify-between gap-3 bg-background/90 px-3 py-8
+          className="absolute -bottom-0 flex w-full justify-between gap-3 bg-background/90 px-2 py-6
             font-semibold backdrop-blur-sm"
         >
           <div className="flex h-full flex-col justify-evenly gap-[2px] rounded-lg px-3">

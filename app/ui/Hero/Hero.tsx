@@ -1,9 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 import { Input } from "@/app/ui/input";
 import { Button } from "@/app/ui/button";
+import heroImg from "@/public/assets/hero-bg.jpg";
 
 function Hero() {
   const [search, setSearch] = useState("");
@@ -14,12 +16,13 @@ function Hero() {
     router.push(`/search?q=${search}`);
   }
   return (
-    <div className="relative mt-14 grid min-h-[28rem] place-items-center">
-      <div
-        className="absolute z-[-1] h-full w-full rounded-lg bg-[url(/assets/hero-bg.jpg)] bg-cover
-          bg-clip-border brightness-[.55]"
+    <div className="relative mt-14 grid aspect-video w-full place-items-center">
+      <Image
+        src={heroImg}
+        alt="Collage of movie posters"
+        className="absolute h-full w-full rounded-lg object-cover brightness-[.55]"
       />
-      <div className="flex flex-col items-center">
+      <div className="isolate flex flex-col items-center">
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-6xl">
           What will you watch next?
         </h1>

@@ -1,6 +1,7 @@
 import React from "react";
 
-import Hero from "@/app/ui/Hero";
+// import Hero from "@/app/ui/Hero";
+import HeroWrapper from "@/app/ui/Hero/HeroWrapper";
 import HomepageMovies from "@/app/ui/HomepageMovies";
 
 import getAPIData from "@/app/lib/useAPI";
@@ -12,7 +13,7 @@ async function Homepage() {
 
   return (
     <>
-      <Hero />
+      <HeroWrapper />
       <div className="mt-14">
         <h2 className="mb-4 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight">
           Trending
