@@ -5,7 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/app/ui/carousel";
-import HeroNew from "./HeroNew";
+import HeroNew from "./Hero";
 
 import getAPIData from "@/app/lib/useAPI";
 
