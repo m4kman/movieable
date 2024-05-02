@@ -1,3 +1,5 @@
+"use client";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -5,18 +7,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/app/ui/carousel";
-import HeroNew from "./Hero";
+import Hero from "./Hero";
 
-import getAPIData from "@/app/lib/useAPI";
-
-async function HeroCarousel() {
-  const { results: data } = await getAPIData(
-    "/trending/all/week?language=en-US",
-  );
+function HeroCarousel({ data }: { data: any[] }) {
   const heroMovies = data.slice(0, 7);
-
   return (
-    <Carousel>
+    <Carousel plugins={[Autoplay({ delay: 4000, stopOnMouseEnter: true })]}>
       <CarouselContent>
         {heroMovies.map(
           (
@@ -32,14 +28,14 @@ async function HeroCarousel() {
             },
             idx: number,
           ) => (
-            <CarouselItem key={idx}>
-              <HeroNew data={movie} />
+            <CarouselItem className="basis-full" key={idx}>
+              <Hero data={movie} />
             </CarouselItem>
           ),
         )}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="border-none" icon="ChevronLeft" />
+      <CarouselNext className="border-none" icon="ChevronRight" />
     </Carousel>
   );
 }

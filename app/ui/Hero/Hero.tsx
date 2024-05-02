@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { Button } from "@/app/ui/button";
 
-function HeroNew({
+function Hero({
   data,
 }: {
   data: {
@@ -74,4 +74,4 @@ function HeroNew({
   );
 }
 
-export default HeroNew;
+export default Hero;
