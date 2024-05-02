@@ -19,7 +19,7 @@ function Hero({
   };
 }) {
   return (
-    <div className="mt-14 grid h-full min-h-[30rem] grid-cols-[1.5fr_2fr]">
+    <div className="grid h-full min-h-[30rem] grid-cols-[1.5fr_2fr]">
       <div className="z-[999999] flex flex-col justify-center pl-4 shadow-[15px_1px_4px_6px_#06060e]">
         <h1 className="scroll-m-20 text-4xl font-semibold tracking-tight first:mt-0">
           {data.title ? data.title : data.name}

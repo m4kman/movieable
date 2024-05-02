@@ -12,7 +12,15 @@ import Hero from "./Hero";
 function HeroCarousel({ data }: { data: any[] }) {
   const heroMovies = data.slice(0, 7);
   return (
-    <Carousel plugins={[Autoplay({ delay: 4000, stopOnMouseEnter: true })]}>
+    <Carousel
+      plugins={[
+        Autoplay({
+          delay: 4000,
+          stopOnMouseEnter: true,
+          stopOnInteraction: false,
+        }),
+      ]}
+    >
       <CarouselContent>
         {heroMovies.map(
           (
