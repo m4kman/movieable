@@ -13,7 +13,8 @@ interface HomepageMoviesProps {
   data: {
     poster_path: string;
     id: number;
-    type: string;
+    type?: string;
+    media_type?: string;
     title?: string;
     name?: string;
     vote_average: number;
@@ -25,7 +26,7 @@ function HomepageMovies({ data }: HomepageMoviesProps) {
     <Carousel opts={{ align: "start" }} className="w-full">
       <CarouselContent>
         {data.map((movie, idx) => (
-          <CarouselItem className="basis-1/4" key={idx}>
+          <CarouselItem className="basis-1/5" key={idx}>
             <HomepageMovieCard data={movie} />
           </CarouselItem>
         ))}

@@ -13,6 +13,9 @@ function HeroCarousel({ data }: { data: any[] }) {
   const heroMovies = data.slice(0, 7);
   return (
     <Carousel
+      opts={{
+        loop: true,
+      }}
       plugins={[
         Autoplay({
           delay: 4000,

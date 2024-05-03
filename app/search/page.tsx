@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import MovieCard from "@/app/ui/MovieCard";
+import HomepageMovieCard from "@/app/ui/HomepageMovieCard";
 import getAPIData from "@/app/lib/useAPI";
 
 export default async function Home({
@@ -42,7 +42,7 @@ export default async function Home({
             href={`/movie/${movieData.id}?type=${movieData.media_type ? movieData.media_type : "movie"}`}
             key={movieData.id}
           >
-            <MovieCard movieData={movieData} />
+            <HomepageMovieCard data={movieData} />
           </Link>
         ),
       )}

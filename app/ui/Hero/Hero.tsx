@@ -68,6 +68,7 @@ function Hero({
           src={`https://image.tmdb.org/t/p/w1280${data.backdrop_path}`}
           alt={`${data.title} Backdrop`}
           fill
+          sizes="100%"
         />
       </div>
     </div>
