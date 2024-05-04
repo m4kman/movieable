@@ -34,7 +34,7 @@ function MovieDetails({ details }: PropTypes) {
 
   return (
     <div className="mt-6 tracking-wide text-foreground">
-      <h1 className="text-6xl font-semibold">
+      <h1 className="font-semibold ~text-5xl/6xl">
         {details.title ? details.title : details.name}
       </h1>
       <div className="mt-5 flex gap-3">
@@ -43,19 +43,24 @@ function MovieDetails({ details }: PropTypes) {
         </div>
         <p className="mt-[6px]">{details.vote_count} Ratings</p>
       </div>
-      <div className="mt-5 grid grid-cols-3 justify-items-start gap-6">
-        <div className="info">
+      <div
+        className="mt-5 grid justify-items-start gap-6 md:grid-cols-2 md:grid-rows-2
+          lg:grid-cols-[1fr_1.1fr_1fr] xl:grid-cols-3"
+      >
+        <div className="info max-h-fit">
           <p
             className={
               details.tagline
-                ? "mb-5 text-balance"
+                ? "mb-5 max-w-[50ch] text-balance md:max-w-full"
                 : "mb-5 text-balance text-muted-foreground"
             }
           >
             {details.tagline ? details.tagline : "No tagline present."}
           </p>
           <div className="max-w-[13ch] border-b border-b-border" />
-          <p className="mt-5 max-w-[55ch] text-balance">{details.overview}</p>
+          <p className="mt-5 max-w-[50ch] text-balance md:max-w-[55ch]">
+            {details.overview}
+          </p>
           <div className="mt-8">
             <MovieInfo
               genres={details.genres}
@@ -66,8 +71,9 @@ function MovieDetails({ details }: PropTypes) {
           </div>
         </div>
         <div
-          className="relative h-full max-h-[600px] min-h-[500px] w-full max-w-full
-            justify-self-center rounded-lg border border-border"
+          className="relative order-first row-span-2 h-[400px] max-h-[575px] w-full max-w-[300px]
+            rounded-lg border border-border md:order-none md:h-full md:max-w-full
+            md:justify-self-center"
         >
           <Image
             fill

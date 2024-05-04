@@ -10,18 +10,22 @@ function Loading() {
           <Skeleton className="h-[30px] w-[225px]" />
         </div>
       </div>
-      <div className="grid grid-cols-3 justify-items-start space-x-6 space-y-5">
+      <div
+        className="grid justify-items-start gap-6 md:grid-cols-2 md:grid-rows-2
+          lg:grid-cols-[1fr_1.1fr_1fr] xl:grid-cols-3"
+      >
         <div className="info space-y-8">
-          <Skeleton className="h-[25px] w-[250px]" />
+          <Skeleton className="w-[120px] md:h-[40px] md:w-[200] xl:h-[25px]" />
           <div className="max-w-[13ch] border-b border-b-border" />
-          <Skeleton className="h-[100px] w-[360px]" />
+          <Skeleton className="h-[120px] w-[350px] lg:w-[280px] xl:w-[360px]" />
           <div className="space-y-8">
-            <Skeleton className="h-[70px] w-[360px]" />
+            <Skeleton className="md:h-[120px] lg:w-[220px] xl:w-[360px]" />
           </div>
         </div>
         <div
-          className="relative h-full max-h-[600px] min-h-[500px] w-full max-w-full
-            justify-self-center rounded-lg border border-border"
+          className="relative order-first row-span-2 h-[400px] max-h-[575px] w-full max-w-[300px]
+            rounded-lg border border-border md:order-none md:h-full md:max-w-full
+            md:justify-self-center"
         >
           <Skeleton className="h-full w-full" />
         </div>

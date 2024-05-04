@@ -6,6 +6,16 @@ import { motion } from "framer-motion";
 
 import { Input } from "@/app/ui/input";
 
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/app/ui/navigation-menu";
+
+import useWindowSize from "@/app/lib/useWindowSize";
+
 const navItems = [
   {
     name: "Action",
@@ -32,11 +42,15 @@ const navItems = [
 function Navbar() {
   const [search, setSearch] = useState("");
   const router = useRouter();
+
+  const windowSize = useWindowSize();
+
   function handleSearch(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     router.push(`/search?q=${search}`);
     setSearch("");
   }
+
   return (
     <>
       <nav className="mb-14 border-b border-border/50">
@@ -52,8 +66,8 @@ function Navbar() {
           }}
           className="flex justify-between gap-8 pb-5 pt-6"
         >
-          <div className="flex items-center gap-8">
-            <Link className="text-2xl font-bold italic" href="/">
+          <div className="flex items-center ~gap-4/8">
+            <Link className="font-bold italic ~text-xl/2xl" href="/">
               Movieable
             </Link>
             <form
@@ -66,7 +80,7 @@ function Navbar() {
                 type="search"
                 spellCheck={false}
                 required
-                className="w-96 max-w-96 py-4 pl-10 text-base"
+                className="max-w-96 py-4 pl-10 ~w-48/96 ~text-sm/base"
                 placeholder="Search for a movie or TV show"
               />
               <svg
@@ -86,17 +100,45 @@ function Navbar() {
             </form>
           </div>
 
-          <div className="flex gap-14">
-            {navItems.map((navItem: any, idx: number) => (
-              <Link
-                key={`link=${idx}`}
-                href={navItem.link}
-                className="flex items-center tracking-wide text-neutral-600 hover:text-neutral-500
-                  dark:text-neutral-50 dark:hover:text-neutral-300"
-              >
-                <span className="hidden sm:block">{navItem.name}</span>
-              </Link>
-            ))}
+          <div className="flex ~gap-4/8">
+            {windowSize !== undefined ? (
+              windowSize.width >= 900 ? (
+                navItems.map((navItem: any, idx: number) => (
+                  <Link
+                    key={`link=${idx}`}
+                    href={navItem.link}
+                    className="flex items-center tracking-wide text-neutral-600 hover:text-neutral-500
+                      dark:text-neutral-50 dark:hover:text-neutral-300"
+                  >
+                    <span className="text-sm font-medium">{navItem.name}</span>
+                  </Link>
+                ))
+              ) : (
+                <NavigationMenu>
+                  <NavigationMenuList>
+                    <NavigationMenuItem>
+                      <NavigationMenuTrigger>Genres</NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <div className="grid w-[130px] gap-4 p-4">
+                          {navItems.map((navItem: any, idx: number) => (
+                            <Link
+                              key={`link=${idx}`}
+                              href={navItem.link}
+                              className="flex items-center tracking-wide text-neutral-600 hover:text-neutral-500
+                                dark:text-neutral-50 dark:hover:text-neutral-300"
+                            >
+                              <span className="text-sm font-medium">
+                                {navItem.name}
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  </NavigationMenuList>
+                </NavigationMenu>
+              )
+            ) : null}
           </div>
         </motion.div>
       </nav>

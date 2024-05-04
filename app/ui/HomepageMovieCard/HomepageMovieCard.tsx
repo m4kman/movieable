@@ -61,14 +61,16 @@ function HomepageMovieCard({
         />
         <motion.div
           variants={variants}
-          className="absolute -bottom-0 flex w-full justify-between gap-3 bg-background/90 px-2 py-6
-            font-semibold backdrop-blur-sm"
+          className="absolute inset-x-0 -bottom-0 flex w-full justify-between gap-3 bg-background/90
+            px-2 py-6 backdrop-blur-sm"
         >
           <div className="flex h-full flex-col justify-evenly gap-[2px] rounded-lg px-3">
-            <span className="text-xl leading-tight">
+            <span className="font-semibold leading-tight ~text-base/xl">
               {data.title ? data.title : data.name}
             </span>
-            <span className="mb-1 text-sm text-foreground/80">{subTitle}</span>
+            <span className="mb-1 text-sm font-medium text-foreground/80">
+              {subTitle}
+            </span>
             <div className="flex items-center gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +86,7 @@ function HomepageMovieCard({
                   d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
                 />
               </svg>
-              <span className="text-sm font-semibold tracking-widest">
+              <span className="text-sm font-medium tracking-widest">
                 <span>{data.vote_average.toFixed(1)}</span>
               </span>
             </div>
@@ -94,7 +96,7 @@ function HomepageMovieCard({
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="h-6 w-6"
+              className="~h-5/6 ~w-5/6"
             >
               <path
                 fillRule="evenodd"

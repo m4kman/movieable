@@ -7,7 +7,7 @@ export default async function Home({ params }: { params: { slug: string } }) {
   );
 
   return (
-    <div className="grid grid-cols-5 justify-center gap-6">
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
       {data.map((movie: any) => {
         return <HomepageMovieCard key={movie.id} data={movie} />;
       })}

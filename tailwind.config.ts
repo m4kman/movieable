@@ -1,13 +1,22 @@
 import type { Config } from "tailwindcss";
+import {
+  fluidExtractor,
+  fluidCorePlugins,
+  defaultThemeScreensInRems,
+  defaultThemeFontSizeInRems,
+} from "fluid-tailwind";
 
 const config = {
   darkMode: ["class"],
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
+  content: {
+    files: [
+      "./pages/**/*.{ts,tsx}",
+      "./components/**/*.{ts,tsx}",
+      "./app/**/*.{ts,tsx}",
+      "./src/**/*.{ts,tsx}",
+    ],
+    extract: fluidExtractor(),
+  },
   prefix: "",
   theme: {
     container: {
@@ -17,6 +26,8 @@ const config = {
         "2xl": "1400px",
       },
     },
+    fontSize: defaultThemeFontSizeInRems,
+    screens: defaultThemeScreensInRems,
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -74,7 +85,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), fluidCorePlugins],
 } satisfies Config;
 
 export default config;

@@ -22,7 +22,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="dark mx-auto max-w-7xl" lang="en">
+    <html
+      className="dark mx-auto overflow-x-hidden px-14 xl:max-w-6xl xl:px-0"
+      lang="en"
+    >
       <body className={`${monoSans.className} flex min-h-screen flex-col`}>
         <Navbar />
         {children}

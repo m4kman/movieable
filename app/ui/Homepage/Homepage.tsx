@@ -14,21 +14,21 @@ async function Homepage() {
     <>
       <HeroCarousel data={trendingMovies} />
       <div className="mt-14">
-        <h2 className="mb-4 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight">
+        <h2 className="mb-4 scroll-m-20 pb-2 font-semibold tracking-tight ~text-xl/3xl">
           Trending
         </h2>
         <HomepageMovies data={trendingMovies} />
       </div>
 
       <div className="mt-14">
-        <h2 className="mb-4 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight">
+        <h2 className="mb-4 scroll-m-20 pb-2 font-semibold tracking-tight ~text-xl/3xl">
           Top Rated
         </h2>
         <HomepageMovies data={topRatedMovies} />
       </div>
 
       <div className="mt-14">
-        <h2 className="mb-4 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight">
+        <h2 className="mb-4 scroll-m-20 pb-2 font-semibold tracking-tight ~text-xl/3xl">
           Popular
         </h2>
         <HomepageMovies data={popularMovies} />

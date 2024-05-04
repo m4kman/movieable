@@ -26,7 +26,7 @@ export default async function Home({
   );
 
   return (
-    <div className="grid grid-cols-4 gap-8">
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
       {filteredData.map(
         (movieData: {
           id: number;
